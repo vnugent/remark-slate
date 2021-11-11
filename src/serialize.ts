@@ -15,16 +15,17 @@ export interface BlockType {
   type: string;
   parentType?: string;
   link?: string;
-  caption?: string;
+  url?: string;
+  caption?: string | Array<LeafType>;
   language?: string;
   break?: boolean;
   children: Array<BlockType | LeafType>;
 }
-
 interface Options {
   nodeTypes: NodeTypes;
   listDepth?: number;
   ignoreParagraphNewline?: boolean;
+  imageSourceKey?: string;
 }
 
 const isLeafNode = (node: BlockType | LeafType): node is LeafType => {
@@ -190,8 +191,12 @@ export default function serialize(
     case nodeTypes.link:
       return `[${children}](${(chunk as BlockType).link || ''})`;
     case nodeTypes.image:
-      return `![${(chunk as BlockType).caption}](${
-        (chunk as BlockType).link || ''
+      const imgNode = (chunk as BlockType).caption || '';
+      const captionText = Array.isArray(imgNode)
+        ? imgNode.map((n) => n.text).join('')
+        : `${(chunk as BlockType).caption}`;
+      return `![${captionText}](${
+        (chunk as BlockType).link || (chunk as BlockType).url || ''
       })`;
 
     case nodeTypes.ul_list:
