@@ -197,7 +197,7 @@ export default function serialize(
         : `${(chunk as BlockType).caption}`;
       return `![${captionText}](${
         (chunk as BlockType).link || (chunk as BlockType).url || ''
-      })`;
+      })\n`;
 
     case nodeTypes.ul_list:
     case nodeTypes.ol_list:

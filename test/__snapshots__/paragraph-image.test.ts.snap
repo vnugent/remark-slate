@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Use unified to turn markdown into slate state 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "text": "This is a paragraph.",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "caption": Array [
+          Object {
+            "text": "my cat one",
+          },
+        ],
+        "children": Array [
+          Object {
+            "text": "",
+          },
+        ],
+        "link": "https://images.unsplash.com/photo-1489084917528-a57e68a79a1e",
+        "type": "image",
+      },
+      Object {
+        "text": "
+",
+      },
+      Object {
+        "caption": Array [
+          Object {
+            "text": "my cat two",
+          },
+        ],
+        "children": Array [
+          Object {
+            "text": "",
+          },
+        ],
+        "link": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba",
+        "type": "image",
+      },
+    ],
+    "type": "paragraph",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "text": "The end.",
+      },
+    ],
+    "type": "paragraph",
+  },
+]
+`;

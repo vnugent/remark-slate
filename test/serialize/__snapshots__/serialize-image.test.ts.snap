@@ -1,3 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Serialize a image from slate state to markdown 1`] = `"![Jack's profile picture](https://avatars.githubusercontent.com/u/2148168)"`;
+exports[`Serialize a image from slate state to markdown 1`] = `
+"![Jack's profile picture](https://avatars.githubusercontent.com/u/2148168)
+"
+`;
